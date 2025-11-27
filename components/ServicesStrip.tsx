@@ -19,21 +19,21 @@ export function ServicesStrip() {
 
   return (
     <div className="relative">
-      {/* Left arrow – desktop/tablet only */}
+      {/* Left arrow – now also visible on mobile */}
       <button
         type="button"
         onClick={() => scroll("left")}
-        className="hidden sm:flex absolute -left-4 top-1/2 z-10 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
+        className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
         aria-label="Scroll services left"
       >
         ‹
       </button>
 
-      {/* Right arrow – desktop/tablet only */}
+      {/* Right arrow – now also visible on mobile */}
       <button
         type="button"
         onClick={() => scroll("right")}
-        className="hidden sm:flex absolute -right-4 top-1/2 z-10 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
+        className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
         aria-label="Scroll services right"
       >
         ›

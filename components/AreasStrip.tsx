@@ -1,4 +1,3 @@
-// components/AreasStrip.tsx
 "use client";
 
 import Link from "next/link";
@@ -21,27 +20,27 @@ export function AreasStrip() {
 
   return (
     <div className="relative">
-      {/* Left arrow – desktop/tablet only */}
+      {/* Left arrow – now visible on mobile as well */}
       <button
         type="button"
         onClick={() => scroll("left")}
-        className="hidden sm:flex absolute -left-4 top-1/2 z-10 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
+        className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
         aria-label="Scroll areas left"
       >
         ‹
       </button>
 
-      {/* Right arrow – desktop/tablet only */}
+      {/* Right arrow – now visible on mobile as well */}
       <button
         type="button"
         onClick={() => scroll("right")}
-        className="hidden sm:flex absolute -right-4 top-1/2 z-10 -translate-y-1/2 h-8 w-8 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
+        className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#01487E]/30 bg-white/90 text-sm font-bold text-[#01487E] shadow-sm hover:bg-[#01487E]/5"
         aria-label="Scroll areas right"
       >
         ›
       </button>
 
-      {/* Scrollable row – scrollbar hidden, no vertical clipping */}
+      {/* Scrollable row – same card sizing as ServicesStrip */}
       <div
         ref={scrollRef}
         className="flex gap-4 overflow-x-auto overflow-y-visible pb-2 pt-1 scroll-smooth scrollbar-hide"
