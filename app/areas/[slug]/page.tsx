@@ -39,8 +39,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${area.name} Plumbers – EZO Plumbing and Heating Ltd`,
-    description: `${area.description} EZO Plumbing and Heating offers 24/7 emergency plumbers and general plumbing services in ${area.name}.`,
+    // Use the SEO headline if you’ve set it in data/areas.ts
+    title: `${area.headline} | EZO Plumbing and Heating Ltd`,
+    description: `${area.description} EZO Plumbing and Heating offers 24/7 emergency plumbers and general plumbing services in ${area.name} and nearby postcodes.`,
   };
 }
 
@@ -79,6 +80,12 @@ export default async function AreaPage({ params }: RouteParams) {
 
     notFound();
   }
+
+  // Use per-area hero image from data/areas.ts, with a safe fallback
+  const heroImage = area.heroImage ?? {
+    src: "/images/ezo-hero-plumber.jpeg",
+    alt: `EZO plumber at work in ${area.name}`,
+  };
 
   return (
     <div className="mx-auto max-w-5xl space-y-14 px-4 py-10">
@@ -128,11 +135,11 @@ export default async function AreaPage({ params }: RouteParams) {
           <div className="space-y-3">
             <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-white shadow-md">
               <Image
-                src="/images/ezo-hero-plumber.jpeg"
-                alt={`EZO plumber at work in ${area.name}`}
+                src={heroImage.src}
+                alt={heroImage.alt}
                 width={700}
                 height={420}
-                className="h-48 w-full object-cover sm:h-56"
+                className="h-60 w-full object-cover sm:h-72"
               />
             </div>
             <div className="grid grid-cols-2 gap-3 text-[11px] text-[#01487E]/90">
@@ -174,7 +181,7 @@ export default async function AreaPage({ params }: RouteParams) {
       </section>
 
       {/* MINI GALLERY / LOCAL FEEL */}
-      <section className="space-y-5 border-t border-slate-200 pt-8">
+      {/* <section className="space-y-5 border-t border-slate-200 pt-8">
         <SectionDivider label={`Section 02 · EZO work around ${area.name}`} />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           A quick look at EZO work around {area.name}
@@ -218,11 +225,11 @@ export default async function AreaPage({ params }: RouteParams) {
             </figcaption>
           </figure>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
       <section className="space-y-5 border-t border-slate-200 pt-8">
-        <SectionDivider label={`Section 03 · FAQs for ${area.name}`} />
+        <SectionDivider label={`Section 02 · FAQs for ${area.name}`} />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           EZO Plumbing and Heating FAQs for {area.name}
         </h2>

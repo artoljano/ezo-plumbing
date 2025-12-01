@@ -1,11 +1,18 @@
+// components/AreasStrip.tsx
 "use client";
 
 import Link from "next/link";
 import { useRef } from "react";
-import { AREAS } from "@/data/areas";
+import { AREAS, type Area } from "@/data/areas";
 
-export function AreasStrip() {
+type AreasStripProps = {
+  areas?: Area[]; // optional – if not provided, use all AREAS (for homepage)
+};
+
+export function AreasStrip({ areas }: AreasStripProps) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const items = areas && areas.length > 0 ? areas : AREAS;
 
   const scroll = (direction: "left" | "right") => {
     const container = scrollRef.current;
@@ -20,7 +27,7 @@ export function AreasStrip() {
 
   return (
     <div className="relative">
-      {/* Left arrow – now visible on mobile as well */}
+      {/* Left arrow – visible on mobile as well */}
       <button
         type="button"
         onClick={() => scroll("left")}
@@ -30,7 +37,7 @@ export function AreasStrip() {
         ‹
       </button>
 
-      {/* Right arrow – now visible on mobile as well */}
+      {/* Right arrow – visible on mobile as well */}
       <button
         type="button"
         onClick={() => scroll("right")}
@@ -45,7 +52,7 @@ export function AreasStrip() {
         ref={scrollRef}
         className="flex gap-4 overflow-x-auto overflow-y-visible pb-2 pt-1 scroll-smooth scrollbar-hide"
       >
-        {AREAS.map((area) => (
+        {items.map((area) => (
           <Link
             key={area.slug}
             href={`/areas/${area.slug}`}

@@ -4,11 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { AREAS } from "@/data/areas";
 import { SectionDivider } from "@/components/SectionDivider";
+import { COVERED_POSTCODE_AREAS, COVERS_LONDON } from "@/data/coverage";
+import { AreasStrip } from "@/components/AreasStrip";
+
+const COVERAGE_TEXT = COVERED_POSTCODE_AREAS.join(", ");
 
 export const metadata: Metadata = {
   title: "EZO Plumbing and Heating Ltd – Areas We Cover",
-  description:
-    "See all areas covered by EZO Plumbing and Heating across the West Midlands, East Midlands and London.",
+  description: `See all areas covered by EZO Plumbing and Heating across the West Midlands, East Midlands and London – including postcode areas ${COVERAGE_TEXT}${
+    COVERS_LONDON ? " plus key parts of London." : "."
+  }`,
+  alternates: {
+    canonical: "/areas",
+  },
+  openGraph: {
+    title: "EZO Plumbing and Heating Ltd – Areas We Cover",
+    description: `Fast-response plumbing and heating across the West Midlands, East Midlands and London – covering postcode areas ${COVERAGE_TEXT}${
+      COVERS_LONDON ? " plus key parts of London." : "."
+    }`,
+    type: "website",
+    url: "/areas",
+    images: [
+      {
+        url: "/images/ezo-team-van.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EZO Plumbing and Heating van covering multiple areas",
+      },
+    ],
+  },
 };
 
 export default function AreasPage() {
@@ -45,6 +69,21 @@ export default function AreasPage() {
               Many customers start by asking a simple question: &quot;Do you
               come to my street?&quot; – the answer is often yes, especially if
               you are close to any of the locations listed below.
+            </p>
+
+            {/* Postcode coverage line driven by coverage.ts */}
+            <p className="mt-2 text-xs text-[#01487E]/75">
+              EZO currently covers postcode areas{" "}
+              <span className="font-semibold">{COVERAGE_TEXT}</span>
+              {COVERS_LONDON && (
+                <>
+                  {" "}
+                  plus key parts of{" "}
+                  <span className="font-semibold">London</span>
+                </>
+              )}
+              . If you&apos;re nearby, send your postcode and we&apos;ll confirm
+              exact coverage and response times.
             </p>
           </div>
 
@@ -86,28 +125,7 @@ export default function AreasPage() {
           planned jobs.
         </p>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          {westMidlands.map((area) => (
-            <Link
-              key={area.slug}
-              href={`/areas/${area.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-[#01487E]/20 bg-white/95 p-4 sm:p-5 text-sm shadow-sm transition-all duration-200 hover:border-[#F08B1F]/70 hover:shadow-md min-h-[230px] sm:min-h-[260px]"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#01487E]">
-                EZO in {area.name}
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#01487E]">
-                {area.name}
-              </p>
-              <p className="mt-2 line-clamp-3 text-xs text-[#01487E]/80">
-                {area.description}
-              </p>
-              <span className="mt-3 inline-flex text-[11px] font-semibold text-[#F08B1F] group-hover:underline">
-                View local plumber page
-              </span>
-            </Link>
-          ))}
-        </div>
+        <AreasStrip areas={westMidlands} />
       </section>
 
       {/* EAST MIDLANDS */}
@@ -121,28 +139,7 @@ export default function AreasPage() {
           – with both emergency callouts and planned plumbing work.
         </p>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          {eastMidlands.map((area) => (
-            <Link
-              key={area.slug}
-              href={`/areas/${area.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-[#01487E]/20 bg-white/95 p-4 sm:p-5 text-sm shadow-sm transition-all duration-200 hover:border-[#F08B1F]/70 hover:shadow-md min-h-[230px] sm:min-h-[260px]"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#01487E]">
-                EZO in {area.name}
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#01487E]">
-                {area.name}
-              </p>
-              <p className="mt-2 line-clamp-3 text-xs text-[#01487E]/80">
-                {area.description}
-              </p>
-              <span className="mt-3 inline-flex text-[11px] font-semibold text-[#F08B1F] group-hover:underline">
-                View local plumber page
-              </span>
-            </Link>
-          ))}
-        </div>
+        <AreasStrip areas={eastMidlands} />
       </section>
 
       {/* LONDON */}
@@ -156,28 +153,7 @@ export default function AreasPage() {
           communication about when an engineer can reach you.
         </p>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          {london.map((area) => (
-            <Link
-              key={area.slug}
-              href={`/areas/${area.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-[#01487E]/20 bg-white/95 p-4 sm:p-5 text-sm shadow-sm transition-all duration-200 hover:border-[#F08B1F]/70 hover:shadow-md min-h-[230px] sm:min-h-[260px]"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#01487E]">
-                EZO in {area.name}
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#01487E]">
-                {area.name}
-              </p>
-              <p className="mt-2 line-clamp-3 text-xs text-[#01487E]/80">
-                {area.description}
-              </p>
-              <span className="mt-3 inline-flex text-[11px] font-semibold text-[#F08B1F] group-hover:underline">
-                View local plumber page
-              </span>
-            </Link>
-          ))}
-        </div>
+        <AreasStrip areas={london} />
       </section>
 
       {/* SOFT CTA */}

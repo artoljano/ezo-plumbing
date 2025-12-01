@@ -30,7 +30,7 @@ export default function AboutPage() {
 
             <h1 className="text-3xl font-extrabold tracking-tight text-[#01487E] sm:text-4xl md:text-5xl">
               A plumbing &amp; heating team built for{" "}
-              <span className="text-[#F08B1F]">fast, clear, tidy work</span>.
+              <span className="text-[#F08B1F]">fast, clear, tidy</span> work.
             </h1>
 
             <p className="max-w-2xl text-sm text-[#01487E]/90 sm:text-[15px]">

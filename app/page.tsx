@@ -1,10 +1,10 @@
 // app/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ServicesStrip } from "@/components/ServicesStrip";
 import { AreasStrip } from "@/components/AreasStrip";
 import { SectionDivider } from "@/components/SectionDivider";
+import { HeroServicesCarousel } from "@/components/HeroServicesCarousel";
 
 export const metadata: Metadata = {
   title:
@@ -70,59 +70,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right – imagery & stats */}
-          <div className="space-y-3">
-            <div className="overflow-hidden rounded-2xl border border-[#01487E]/15 bg-white/90 shadow-md transition-transform duration-200 hover:-translate-y-1">
-              <Image
-                src="/images/ezo-hero-plumber.jpeg"
-                alt="EZO plumber fixing a leak"
-                width={900}
-                height={520}
-                className="h-60 w-full object-cover sm:h-72"
-              />
-              <div className="flex items-center justify-between gap-3 px-4 py-3 text-xs">
-                <div>
-                  <p className="font-semibold text-[#01487E]">
-                    Leak stopped. Heating safe.
-                  </p>
-                  <p className="text-[11px] text-[#01487E]/80">
-                    Same-evening fix after a burst under a kitchen sink.
-                  </p>
-                </div>
-                <span className="rounded-full bg-[#01487E]/10 px-2 py-1 text-[10px] font-medium text-[#01487E]">
-                  Real EZO job
-                </span>
-              </div>
-            </div>
-
-            <div className="grid gap-3 text-xs sm:grid-cols-2">
-              <div className="flex flex-col justify-between rounded-2xl border border-[#01487E]/20 bg-white/90 px-3 py-3">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-[#01487E]">
-                  Typical response
-                </p>
-                <p className="mt-1 text-xl font-bold text-[#01487E]">
-                  60–90 mins
-                </p>
-                <p className="mt-1 text-[11px] text-[#01487E]/80">
-                  For many emergency callouts, depending on location &amp;
-                  traffic.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-between rounded-2xl border border-[#F08B1F]/40 bg-gradient-to-br from-[#F08B1F]/8 via-white to-[#01487E]/6 px-3 py-3">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-[#F08B1F]">
-                  Direct to engineer
-                </p>
-                <p className="mt-1 text-sm font-semibold text-[#01487E]">
-                  No call centres. Talk to someone who can actually help.
-                </p>
-                <p className="mt-1 text-[11px] text-[#01487E]/80">
-                  Send photos by WhatsApp or describe the problem in your own
-                  words.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Right – hero services carousel */}
+          <HeroServicesCarousel />
         </div>
       </section>
 
