@@ -183,9 +183,52 @@ export default async function AreaPage({ params }: RouteParams) {
         </a>
       </section>
 
-      {/* COMMON JOBS */}
+      {/* SECTION 01 – LOCAL CONTACT / FORM SECTION */}
       <section className="space-y-5 border-t border-slate-200 pt-8">
-        <SectionDivider label={`Section 01 · Jobs we handle in ${area.name}`} />
+        <SectionDivider label={`Section 01 · Book EZO in ${area.name}`} />
+        <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
+          Tell EZO what&apos;s happening in {area.name}
+        </h2>
+        <p className="max-w-2xl text-sm text-[#01487E]/90">
+          Use this quick form to send details of your plumbing or heating issue
+          in {area.name}. We&apos;ll reply with timing and the next steps. For
+          active leaks or spreading water, please call instead of waiting for a
+          message.
+        </p>
+
+        <div className="grid gap-6 md:grid-cols-[3fr,2fr] md:items-start">
+          {/* Re-using your existing ContactForm component */}
+          <ContactForm defaultAreaSlug={area.slug} />
+
+          <div className="space-y-3 rounded-2xl border border-[#01487E]/20 bg-[#01487E]/5 p-4 text-xs text-[#01487E]/90">
+            <p className="font-semibold text-[#01487E]">
+              Helpful details for {area.name} callouts
+            </p>
+            <ul className="mt-1 space-y-1">
+              <li>
+                • Rough area (e.g. near the town centre, station or a local
+                landmark).
+              </li>
+              <li>• Parking or access details we should know.</li>
+              <li>
+                • How long the issue has been going on (minutes, hours, days).
+              </li>
+              <li>
+                • If it&apos;s a rental, tell us if you&apos;re the tenant,
+                landlord or agent.
+              </li>
+            </ul>
+            <p className="mt-2 text-[11px] text-[#01487E]/80">
+              Photos or a short video of leaks, damp patches or blockages are
+              very helpful – they let us plan the right fix before we arrive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 02 – COMMON JOBS */}
+      <section className="space-y-5 border-t border-slate-200 pt-8">
+        <SectionDivider label={`Section 02 · Jobs we handle in ${area.name}`} />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           Common plumbing jobs EZO handles in {area.name}
         </h2>
@@ -209,10 +252,10 @@ export default async function AreaPage({ params }: RouteParams) {
         </ul>
       </section>
 
-      {/* RECENT / TYPICAL JOBS – NOW CARDS */}
+      {/* SECTION 03 – RECENT / TYPICAL JOBS */}
       <section className="space-y-4 border-t border-slate-200 pt-8">
         <SectionDivider
-          label={`Section 02 · Recent jobs around ${area.name}`}
+          label={`Section 03 · Recent jobs around ${area.name}`}
         />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           Typical EZO callouts in {area.name}
@@ -255,10 +298,10 @@ export default async function AreaPage({ params }: RouteParams) {
         </p>
       </section>
 
-      {/* POPULAR SERVICES */}
+      {/* SECTION 04 – POPULAR SERVICES */}
       <section className="space-y-5 border-t border-slate-200 pt-8">
         <SectionDivider
-          label={`Section 03 · Popular services in ${area.name}`}
+          label={`Section 04 · Popular services in ${area.name}`}
         />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           Popular EZO services in {area.name}
@@ -293,9 +336,9 @@ export default async function AreaPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* SECTION 05 – FAQ */}
       <section className="space-y-5 border-t border-slate-200 pt-8">
-        <SectionDivider label={`Section 04 · FAQs for ${area.name}`} />
+        <SectionDivider label={`Section 05 · FAQs for ${area.name}`} />
         <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
           EZO Plumbing and Heating FAQs for {area.name}
         </h2>
@@ -331,49 +374,6 @@ export default async function AreaPage({ params }: RouteParams) {
               find when we arrive. We&apos;ll always explain call-out and hourly
               rates before you confirm a booking in {area.name}, so you know
               what to expect.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* LOCAL CONTACT / FORM SECTION */}
-      <section className="space-y-5 border-t border-slate-200 pt-8">
-        <SectionDivider label={`Section 05 · Book EZO in ${area.name}`} />
-        <h2 className="mt-2 text-2xl font-semibold text-[#01487E] sm:text-3xl">
-          Tell EZO what&apos;s happening in {area.name}
-        </h2>
-        <p className="max-w-2xl text-sm text-[#01487E]/90">
-          Use this quick form to send details of your plumbing or heating issue
-          in {area.name}. We&apos;ll reply with timing and the next steps. For
-          active leaks or spreading water, please call instead of waiting for a
-          message.
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-[3fr,2fr] md:items-start">
-          {/* Re-using your existing ContactForm component */}
-          <ContactForm defaultAreaSlug={area.slug} />
-
-          <div className="space-y-3 rounded-2xl border border-[#01487E]/20 bg-[#01487E]/5 p-4 text-xs text-[#01487E]/90">
-            <p className="font-semibold text-[#01487E]">
-              Helpful details for {area.name} callouts
-            </p>
-            <ul className="mt-1 space-y-1">
-              <li>
-                • Rough area (e.g. near the town centre, station or a local
-                landmark).
-              </li>
-              <li>• Parking or access details we should know.</li>
-              <li>
-                • How long the issue has been going on (minutes, hours, days).
-              </li>
-              <li>
-                • If it&apos;s a rental, tell us if you&apos;re the tenant,
-                landlord or agent.
-              </li>
-            </ul>
-            <p className="mt-2 text-[11px] text-[#01487E]/80">
-              Photos or a short video of leaks, damp patches or blockages are
-              very helpful – they let us plan the right fix before we arrive.
             </p>
           </div>
         </div>

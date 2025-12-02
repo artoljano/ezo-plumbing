@@ -5,6 +5,7 @@ import { ServicesStrip } from "@/components/ServicesStrip";
 import { AreasStrip } from "@/components/AreasStrip";
 import { SectionDivider } from "@/components/SectionDivider";
 import { HeroServicesCarousel } from "@/components/HeroServicesCarousel";
+import { PreferredAreaBanner } from "@/components/PreferredAreaBanner";
 
 export const metadata: Metadata = {
   title:
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-5xl space-y-20 px-4 py-10">
+      {/* 👇 Preferred area selector / local hint – now ABOVE hero */}
+      <PreferredAreaBanner />
       {/* HERO – new layout, mobile-safe */}
       <section className="relative overflow-hidden rounded-3xl border border-[#01487E]/15 bg-gradient-to-br from-[#01487E]/5 via-white to-[#F08B1F]/10 px-5 py-8 md:px-8 md:py-10">
         {/* soft animated blobs */}
