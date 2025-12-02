@@ -36,10 +36,10 @@ export default function RootLayout({
                 24/7 emergency callouts · EZO Plumbing and Heating Ltd
               </span>
               <a
-                href="tel:+447000000000"
+                href="tel:+44 7418 640186"
                 className="whitespace-nowrap font-semibold text-[#F08B1F] transition-colors hover:text-orange-200"
               >
-                Call now: +44 7000 000000
+                Call now: +44 7418 640186
               </a>
             </div>
           </div>

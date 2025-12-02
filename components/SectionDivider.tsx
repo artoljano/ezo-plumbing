@@ -7,12 +7,17 @@ type SectionDividerProps = {
 export function SectionDivider({ label, className = "" }: SectionDividerProps) {
   return (
     <div
-      className={`flex items-center gap-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-[#01487E] ${className}`}
+      className={`flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] sm:tracking-[0.22em] text-[#01487E] ${className}`}
     >
+      {/* Left shading line – visible on all breakpoints */}
       <span className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-[#01487E]/40 to-transparent" />
-      <span className="rounded-full border border-[#01487E]/20 bg-white px-3 py-1 shadow-sm">
+
+      {/* Pill label – allowed to wrap & stay centered */}
+      <span className="mx-1 max-w-full break-words rounded-full border border-[#01487E]/20 bg-white px-3 py-1 text-center leading-snug shadow-sm">
         {label}
       </span>
+
+      {/* Right shading line – visible on all breakpoints */}
       <span className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-[#01487E]/40 to-transparent" />
     </div>
   );

@@ -175,7 +175,7 @@ export default function AreasPage() {
               Go to the contact page
             </Link>
             <a
-              href="https://wa.me/447000000000"
+              href="https://wa.me/447418640186"
               target="_blank"
               className="inline-flex items-center justify-center rounded-md border border-[#F08B1F] bg-white/80 px-4 py-2 text-sm font-semibold text-[#F08B1F] shadow-sm transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#F08B1F]/5"
             >

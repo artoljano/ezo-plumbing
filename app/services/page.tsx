@@ -10,11 +10,14 @@ export const metadata: Metadata = {
     "Explore EZO Plumbing and Heating services: emergency callouts, leaks, bathrooms, blockages, radiators and landlord support across the West Midlands, East Midlands and London.",
 };
 
+const HERO_SERVICE = SERVICES.find((s) => s.id === "bathrooms") ?? SERVICES[0];
+
 export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-14 px-4 py-10">
       {/* HERO / INTRO – unified hero style */}
       <section className="relative overflow-hidden rounded-3xl border border-[#01487E]/15 bg-gradient-to-br from-[#01487E]/5 via-white to-[#F08B1F]/10 px-5 py-8 md:px-8 md:py-10">
+        {/* soft blobs (kept for mobile + desktop) */}
         <div className="pointer-events-none absolute -left-16 -top-16 h-40 w-40 rounded-full bg-[#01487E]/15 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 -bottom-20 h-52 w-52 rounded-full bg-[#F08B1F]/20 blur-3xl" />
 
@@ -55,13 +58,14 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          {/* Right – hero image driven by services data */}
           <div className="space-y-3">
             <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-white shadow-md">
               <Image
-                src="/images/ezo-bathroom-install.jpg"
-                alt="EZO Plumbing bathroom work"
-                width={700}
-                height={420}
+                src="/images/ezo-team-van.jpg"
+                alt={HERO_SERVICE.heroImage.alt}
+                width={900}
+                height={520}
                 className="h-60 w-full object-cover sm:h-72"
               />
               <div className="px-4 py-3 text-xs text-[#01487E]/90">
@@ -87,7 +91,7 @@ export default function ServicesPage() {
 
         <div className="grid gap-5">
           {SERVICES.map((service, index) => (
-            <div
+            <article
               key={service.id}
               className="grid gap-4 rounded-2xl border border-[#01487E]/20 bg-white/90 p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#F08B1F]/70 hover:shadow-md md:grid-cols-[2fr,2fr]"
             >
@@ -109,12 +113,8 @@ export default function ServicesPage() {
               <div className="space-y-2 text-xs text-[#01487E]/85">
                 <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-[#01487E]/5">
                   <Image
-                    src={
-                      index % 2 === 0
-                        ? "/images/ezo-kitchen-leak.png"
-                        : "/images/ezo-hero-plumber.jpeg"
-                    }
-                    alt={service.name}
+                    src={service.heroImage.src}
+                    alt={service.heroImage.alt}
                     width={900}
                     height={520}
                     className="h-60 w-full object-cover sm:h-72"
@@ -133,7 +133,7 @@ export default function ServicesPage() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>

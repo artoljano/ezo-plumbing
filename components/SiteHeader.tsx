@@ -21,7 +21,13 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
-    <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header
+      className="
+        sticky top-0 z-40
+        border-b border-slate-200 bg-white/95 backdrop-blur
+        sm:static sm:top-auto
+      "
+    >
       {/* Top row */}
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         {/* Logo + name (always visible, compact on mobile) */}
@@ -63,7 +69,7 @@ export function SiteHeader() {
           </nav>
 
           <a
-            href="tel:+447000000000"
+            href="tel:+44 7418 640186"
             className="rounded-lg bg-[#F08B1F] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#ff9c32]"
           >
             Call EZO
@@ -73,7 +79,7 @@ export function SiteHeader() {
         {/* Mobile: call + hamburger */}
         <div className="flex items-center gap-2 sm:hidden">
           <a
-            href="tel:+447000000000"
+            href="tel:+44 7418 640186"
             className="inline-flex items-center justify-center rounded-md bg-[#F08B1F] px-3 py-1.5 text-[11px] font-semibold text-white shadow-sm hover:bg-[#ff9c32]"
           >
             Call
@@ -127,7 +133,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <a
-              href="tel:+447000000000"
+              href="tel:+44 7418 640186"
               className="mt-2 block rounded-md bg-[#F08B1F] px-2 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#ff9c32]"
             >
               Call EZO now

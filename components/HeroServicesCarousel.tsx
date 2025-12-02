@@ -22,14 +22,14 @@ export function HeroServicesCarousel() {
     if (total <= 1) return;
     const id = setInterval(() => {
       setIndex((current) => (((current + 1) % total) + total) % total);
-    }, 6000); // 6s per slide
+    }, 6000);
     return () => clearInterval(id);
   }, [total]);
 
   if (total === 0) return null;
 
   return (
-    <div className="space-y-3">
+    <div className="w-full">
       <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-white/95 shadow-md">
         {/* Sliding track */}
         <div
@@ -37,7 +37,7 @@ export function HeroServicesCarousel() {
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {SERVICES.map((service, i) => (
-            <div
+            <article
               key={service.id ?? service.name}
               className="w-full flex-shrink-0 p-4 sm:p-5"
             >
@@ -59,7 +59,7 @@ export function HeroServicesCarousel() {
                   Emergency &amp; planned work
                 </span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

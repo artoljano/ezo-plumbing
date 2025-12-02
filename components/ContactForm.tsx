@@ -1,29 +1,52 @@
 // components/ContactForm.tsx
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { SERVICES } from "@/data/services";
 import { AREAS } from "@/data/areas";
 
-const WHATSAPP_NUMBER = "447000000000"; // no +, used in wa.me link
+const WHATSAPP_NUMBER = "447418640186"; // no +, used in wa.me link
 
-export function ContactForm() {
+type ContactFormProps = {
+  /** Optional: preselect an area (by slug) when used on an area-specific page */
+  defaultAreaSlug?: string;
+};
+
+export function ContactForm({ defaultAreaSlug }: ContactFormProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [postcode, setPostcode] = useState("");
-  const [areaSlug, setAreaSlug] = useState("");
+  const [areaSlug, setAreaSlug] = useState(defaultAreaSlug ?? "");
   const [serviceId, setServiceId] = useState("");
   const [details, setDetails] = useState("");
 
+  const [status, setStatus] = useState<"idle" | "preparing" | "opened">("idle");
+
+  // Keep area in sync with the page (for /areas/[slug])
+  useEffect(() => {
+    if (defaultAreaSlug) {
+      setAreaSlug(defaultAreaSlug);
+    }
+  }, [defaultAreaSlug]);
+
+  const selectedArea =
+    AREAS.find((a) => a.slug === areaSlug) ??
+    (defaultAreaSlug
+      ? AREAS.find((a) => a.slug === defaultAreaSlug)
+      : undefined);
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (status === "preparing") return;
+
+    setStatus("preparing");
 
     const serviceName =
       SERVICES.find((s) => s.id === serviceId)?.name ||
       "General plumbing / heating issue";
-    const areaName =
-      AREAS.find((a) => a.slug === areaSlug)?.name || "Not specified";
+
+    const areaName = selectedArea?.name || "Not specified";
 
     const lines = [
       `New plumbing/heating enquiry for EZO:`,
@@ -43,12 +66,26 @@ export function ContactForm() {
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
+
+    setStatus("opened");
+    // Optional: reset back to idle after a few seconds
+    setTimeout(() => {
+      setStatus("idle");
+    }, 4000);
   }
 
   const inputClass =
     "w-full rounded-md border border-[#01487E]/30 bg-white px-3 py-2 text-sm text-[#01487E] placeholder:text-[#01487E]/55 focus:border-[#F08B1F] focus:outline-none focus:ring-1 focus:ring-[#F08B1F]";
   const labelClass = "text-xs font-semibold text-[#01487E]";
   const helperClass = "mt-1 text-[11px] text-[#01487E]/70";
+
+  const isPreparing = status === "preparing";
+  const buttonLabel =
+    status === "preparing"
+      ? "Preparing WhatsApp message…"
+      : status === "opened"
+      ? "WhatsApp opened – check your message"
+      : "Open WhatsApp with my enquiry";
 
   return (
     <form
@@ -139,6 +176,13 @@ export function ContactForm() {
               </option>
             ))}
           </select>
+          {defaultAreaSlug && selectedArea && (
+            <p className={helperClass}>
+              Preselected from this page:{" "}
+              <span className="font-semibold">{selectedArea.name}</span>. You
+              can change it if needed.
+            </p>
+          )}
         </div>
       </div>
 
@@ -186,9 +230,14 @@ export function ContactForm() {
       {/* Submit */}
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-md bg-[#01487E] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#015b9f]"
+        disabled={isPreparing}
+        className={`inline-flex w-full items-center justify-center rounded-md px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-150 ${
+          isPreparing
+            ? "bg-[#01487E]/70 cursor-not-allowed"
+            : "bg-[#01487E] hover:-translate-y-0.5 hover:bg-[#015b9f]"
+        }`}
       >
-        Open WhatsApp with my enquiry
+        {buttonLabel}
       </button>
       <p className="text-[11px] text-[#01487E]/70">
         This button opens WhatsApp with a pre-filled message. You can still edit

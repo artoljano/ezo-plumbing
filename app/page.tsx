@@ -16,13 +16,16 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-5xl space-y-20 px-4 py-10">
-      {/* HERO – new layout */}
+      {/* HERO – new layout, mobile-safe */}
       <section className="relative overflow-hidden rounded-3xl border border-[#01487E]/15 bg-gradient-to-br from-[#01487E]/5 via-white to-[#F08B1F]/10 px-5 py-8 md:px-8 md:py-10">
         {/* soft animated blobs */}
         <div className="pointer-events-none absolute -left-16 -top-16 h-40 w-40 rounded-full bg-[#01487E]/15 blur-3xl animate-pulse" />
         <div className="pointer-events-none absolute -right-20 -bottom-20 h-52 w-52 rounded-full bg-[#F08B1F]/20 blur-3xl animate-pulse" />
 
-        <div className="relative grid gap-10 md:grid-cols-[3fr,2.2fr] md:items-center">
+        {/* inner layout:
+            - mobile: centred column, max-w-xl
+            - desktop: 2 columns like before */}
+        <div className="relative mx-auto flex max-w-xl flex-col gap-6 md:max-w-none md:grid md:grid-cols-[3fr,2.2fr] md:gap-10 md:items-center">
           {/* Left – main content */}
           <div className="space-y-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#01487E]/25 bg-white/80 px-3 py-1 text-xs font-medium text-[#01487E] shadow-sm">
@@ -44,10 +47,10 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="tel:+447000000000"
+                href="tel:+447418640186"
                 className="inline-flex items-center justify-center rounded-md bg-[#01487E] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#015b9f]"
               >
-                Call EZO now · +44 7000 000000
+                Call EZO now · +44 7418 640186
               </a>
               <Link
                 href="/contact"
@@ -70,8 +73,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right – hero services carousel */}
-          <HeroServicesCarousel />
+          {/* Right – hero services carousel (same component, just shares layout) */}
+          <div className="mt-2 md:mt-0">
+            <HeroServicesCarousel />
+          </div>
         </div>
       </section>
 
@@ -335,7 +340,7 @@ export default function HomePage() {
             Go to the contact page
           </Link>
           <a
-            href="https://wa.me/447000000000"
+            href="https://wa.me/447418640186"
             target="_blank"
             className="inline-flex items-center justify-center rounded-md border border-[#F08B1F] bg-white/80 px-4 py-2 text-sm font-semibold text-[#F08B1F] shadow-sm transition-transform duration-150 hover:-translate-y-0.5 hover:bg-[#F08B1F]/5"
           >

@@ -46,16 +46,16 @@ export default function ContactPage() {
               <div>
                 <span className="font-semibold text-[#01487E]">Call EZO: </span>
                 <a
-                  href="tel:+447000000000"
+                  href="tel:+44 7418 640186"
                   className="font-semibold text-[#F08B1F] hover:underline"
                 >
-                  +44 7000 000000
+                  +44 7418 640186
                 </a>
               </div>
               <div>
                 <span className="font-semibold text-[#01487E]">WhatsApp: </span>
                 <a
-                  href="https://wa.me/447000000000"
+                  href="https://wa.me/447418640186"
                   target="_blank"
                   className="font-semibold text-[#F08B1F] hover:underline"
                 >
@@ -81,7 +81,7 @@ export default function ContactPage() {
           <div className="space-y-3">
             <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-white shadow-md">
               <Image
-                src="/images/ezo-kitchen-leak.png"
+                src="/images/ezo-hero-plumber.jpeg"
                 alt="EZO plumber inspecting a leak"
                 width={900}
                 height={520}
