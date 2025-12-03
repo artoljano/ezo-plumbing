@@ -1,9 +1,11 @@
 // app/robots.ts
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://www.ezoplumbing.co.uk";
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = "https://ezoplumbing.co.uk"; // <-- same domain as above
+
   return {
     rules: {
       userAgent: "*",

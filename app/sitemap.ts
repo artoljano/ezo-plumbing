@@ -2,27 +2,31 @@
 import type { MetadataRoute } from "next";
 import { AREAS } from "@/data/areas";
 
-const baseUrl = "https://www.ezoplumbing.co.uk";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://ezoplumbing.co.uk"; // <-- update if you use www
+
+  const now = new Date();
+
   const staticRoutes: MetadataRoute.Sitemap = [
-    "",
-    "/about",
-    "/services",
-    "/areas",
-    "/contact",
-  ].map((path) => ({
-    url: `${baseUrl}${path === "" ? "/" : path}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.8,
+    { path: "", priority: 1 },
+    { path: "/about", priority: 0.9 },
+    { path: "/services", priority: 0.9 },
+    { path: "/areas", priority: 0.9 },
+    { path: "/contact", priority: 0.9 },
+  ].map((route) => ({
+    url: `${baseUrl}${route.path}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: route.priority,
   }));
 
   const areaRoutes: MetadataRoute.Sitemap = AREAS.map((area) => ({
     url: `${baseUrl}/areas/${area.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
   }));
 
   return [...staticRoutes, ...areaRoutes];
