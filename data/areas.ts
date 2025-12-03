@@ -21,7 +21,7 @@ export const AREAS: Area[] = [
     description:
       "We provide emergency and planned plumbing services across Birmingham – from burst pipes and leaking toilets to full bathroom installations and boiler work.",
     heroImage: {
-      src: "/images/areas/birmingham.jpg",
+      src: "/images/areas/birmingham.webp",
       alt: "View of Birmingham city centre, one of the areas covered by EZO Plumbing and Heating",
     },
   },
@@ -33,7 +33,7 @@ export const AREAS: Area[] = [
     description:
       "Serving all of Coventry with fast response times for leaks, blockages, bathroom plumbing and landlord repairs.",
     heroImage: {
-      src: "/images/areas/coventry.jpg",
+      src: "/images/areas/coventry.webp",
       alt: "Coventry city centre and local streets served by EZO Plumbing and Heating",
     },
   },
@@ -45,7 +45,7 @@ export const AREAS: Area[] = [
     description:
       "Dependable local plumbers for homes and landlords in Wolverhampton and surrounding areas.",
     heroImage: {
-      src: "/images/areas/wolves.jpg",
+      src: "/images/areas/wolves.webp",
       alt: "Street scene from Wolverhampton city centre within the EZO Plumbing and Heating coverage area",
     },
   },
@@ -69,7 +69,7 @@ export const AREAS: Area[] = [
     description:
       "From burst pipes to full bathroom refurbishments, we help homeowners and landlords across Leicester.",
     heroImage: {
-      src: "/images/areas/leicester.jpg",
+      src: "/images/areas/leicester.webp",
       alt: "Leicester city centre streets in the EZO Plumbing and Heating service area",
     },
   },
@@ -81,7 +81,7 @@ export const AREAS: Area[] = [
     description:
       "Your local plumber in Derby for leaks, blockages, repairs and new installations.",
     heroImage: {
-      src: "/images/areas/derby.jpeg",
+      src: "/images/areas/derby.webp",
       alt: "Derby city centre, one of the towns served by EZO Plumbing and Heating",
     },
   },
@@ -93,7 +93,7 @@ export const AREAS: Area[] = [
     description:
       "Fast-response plumbers covering Greater London with emergency callouts and planned plumbing work.",
     heroImage: {
-      src: "/images/areas/london.jpeg",
+      src: "/images/areas/london.webp",
       alt: "London skyline with landmarks in the wider EZO Plumbing and Heating coverage area",
     },
   },
@@ -105,7 +105,7 @@ export const AREAS: Area[] = [
     description:
       "Covering Walsall and nearby WS postcodes with fast-response plumbing – from emergency leaks and overflows to tap repairs, toilet issues, radiator moves and small bathroom projects.",
     heroImage: {
-      src: "/images/areas/walsall.jpg",
+      src: "/images/areas/walsall.webp",
       alt: "Walsall town centre, part of the WS postcode area covered by EZO Plumbing and Heating",
     },
   },
@@ -117,7 +117,7 @@ export const AREAS: Area[] = [
     description:
       "EZO Plumbing and Heating supports Northampton NN postcodes with emergency leak response, toilet and tap repairs, blocked sinks and showers, and planned plumbing work for homes and landlords.",
     heroImage: {
-      src: "/images/areas/northampton.jpg",
+      src: "/images/areas/northampton.webp",
       alt: "Northampton town centre streets in the NN postcode area served by EZO Plumbing and Heating",
     },
   },
@@ -129,7 +129,7 @@ export const AREAS: Area[] = [
     description:
       "Fast, reliable plumbers for Milton Keynes MK postcodes – handling leaks, heating and radiator problems, blocked toilets and drains, and bathroom plumbing with clear communication and fair pricing.",
     heroImage: {
-      src: "/images/areas/milton-keynes.png",
+      src: "/images/areas/milton-keynes.webp",
       alt: "Central Milton Keynes with modern buildings in the MK postcode coverage area for EZO Plumbing and Heating",
     },
   },
@@ -143,7 +143,7 @@ export const AREAS: Area[] = [
     description:
       "EZO Plumbing and Heating supports Sheffield S postcodes with emergency leak response, blocked toilets and drains, tap and shower repairs, and small bathroom plumbing projects.",
     heroImage: {
-      src: "/images/areas/sheffield.jpg", // replace when you add a Sheffield city image
+      src: "/images/areas/sheffield.webp", // replace when you add a Sheffield city image
       alt: "View across Sheffield city, within the S postcode area covered by EZO Plumbing and Heating",
     },
   },
@@ -167,7 +167,7 @@ export const AREAS: Area[] = [
     description:
       "Fast-response plumbers for Worcester WR postcodes, handling kitchen and bathroom leaks, blocked toilets and drains, and general plumbing repairs for homeowners and landlords.",
     heroImage: {
-      src: "/images/areas/worcester.jpg", // replace with Worcester city image
+      src: "/images/areas/worcester.webp", // replace with Worcester city image
       alt: "Worcester riverside and cathedral area served by EZO Plumbing and Heating",
     },
   },
@@ -179,7 +179,7 @@ export const AREAS: Area[] = [
     description:
       "Covering Oxford OX postcodes with emergency plumbing, leak repairs, blocked toilets and drains, and bathroom plumbing projects with clear, upfront communication.",
     heroImage: {
-      src: "/images/areas/oxford.jpg", // replace with Oxford city image
+      src: "/images/areas/oxford.webp", // replace with Oxford city image
       alt: "Oxford skyline with historic university buildings in the OX postcode service area for EZO Plumbing and Heating",
     },
   },
@@ -204,7 +204,7 @@ export const AREAS: Area[] = [
     description:
       "Supporting Hemel Hempstead HP postcodes with leak detection, pipe and radiator repairs, blocked toilets and sinks, and small bathroom plumbing projects.",
     heroImage: {
-      src: "/images/areas/hemel.jpg", // replace with Hemel Hempstead image
+      src: "/images/areas/hemel.webp", // replace with Hemel Hempstead image
       alt: "Hemel Hempstead town centre in the HP postcode area served by EZO Plumbing and Heating",
     },
   },
@@ -216,7 +216,7 @@ export const AREAS: Area[] = [
     description:
       "Local-style service for St Albans AL postcodes, including emergency callouts for leaks and overflows, blocked toilets and drains, and everyday plumbing repairs.",
     heroImage: {
-      src: "/images/areas/st-albans.jpg", // replace with St Albans city image
+      src: "/images/areas/st-albans.webp", // replace with St Albans city image
       alt: "St Albans city centre with cathedral in the AL postcode area covered by EZO Plumbing and Heating",
     },
   },
@@ -228,7 +228,7 @@ export const AREAS: Area[] = [
     description:
       "EZO Plumbing and Heating supports Slough SL postcodes with rapid response for leaks, blocked toilets and drains, and general plumbing repairs for homes and landlords.",
     heroImage: {
-      src: "/images/areas/slough.png", // replace with Slough city image
+      src: "/images/areas/slough.webp", // replace with Slough city image
       alt: "Slough town centre streets in the SL postcode area served by EZO Plumbing and Heating",
     },
   },

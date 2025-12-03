@@ -21,7 +21,7 @@ export const SERVICES: Service[] = [
     description:
       "When water is going where it shouldn’t, EZO responds fast. Late-night bursts, major leaks, overflowing toilets and urgent issues that can’t wait until morning.",
     heroImage: {
-      src: "/images/ezo-hero-plumber.jpeg",
+      src: "/images/ezo-hero-plumber.webp",
       alt: "EZO plumber dealing with an emergency leak in a kitchen",
     },
   },
@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
     description:
       "Slow drips, mysterious damp patches or obvious pipe damage – we trace the source and repair it properly, not just patch over the problem.",
     heroImage: {
-      src: "/images/ezo-kitchen-leak.png",
+      src: "/images/ezo-kitchen-leak.webp",
       alt: "Close-up of EZO plumber repairing a leaking copper pipe under a sink",
     },
   },
@@ -45,7 +45,7 @@ export const SERVICES: Service[] = [
     description:
       "From swapping a bath for a walk-in shower to full bathroom refurbs, we handle the pipework, waste and fixtures so everything runs cleanly and reliably.",
     heroImage: {
-      src: "/images/ezo-bathroom-plumbing.jpeg",
+      src: "/images/ezo-bathroom-plumbing.webp",
       alt: "Modern bathroom installation completed by EZO Plumbing and Heating",
     },
   },
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
     description:
       "Blocked sinks, slow showers and stubborn toilets cleared with minimum mess. We aim to get water flowing again and reduce the chance of repeat issues.",
     heroImage: {
-      src: "/images/blockage.jpg",
+      src: "/images/blockage.webp",
       alt: "EZO engineer unblocking a household drain in a bathroom",
     },
   },
