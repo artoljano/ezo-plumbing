@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "/areas",
     images: [
       {
-        url: "/images/ezo-team-van.jpg",
+        url: "/images/ezo-team-van.webp",
         width: 1200,
         height: 630,
         alt: "EZO Plumbing and Heating van covering multiple areas",
@@ -93,7 +93,7 @@ export default function AreasPage() {
 
             <div className="relative">
               <Image
-                src="/images/ezo-team-van.jpg"
+                src="/images/ezo-team-van.webp"
                 alt="EZO Plumbing and Heating van covering multiple areas"
                 width={900}
                 height={520}

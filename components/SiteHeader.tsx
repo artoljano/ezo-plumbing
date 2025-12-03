@@ -33,7 +33,7 @@ export function SiteHeader() {
         {/* Logo + name (always visible, compact on mobile) */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/ezo-logo.jpeg"
+            src="/images/ezo-logo.webp"
             alt="EZO Plumbing and Heating Ltd"
             width={200}
             height={200}

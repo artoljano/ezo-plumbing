@@ -26,6 +26,11 @@ function getAreaFromSlug(slug: string | undefined) {
   );
 }
 
+// ✅ Tell Next which /areas/[slug] pages to pre-generate for static export
+export async function generateStaticParams() {
+  return AREAS.map((area) => ({ slug: area.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: RouteParams): Promise<Metadata> {

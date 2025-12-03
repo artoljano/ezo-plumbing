@@ -62,7 +62,7 @@ export default function AboutPage() {
           <div className="space-y-3">
             <div className="overflow-hidden rounded-2xl border border-[#01487E]/20 bg-white shadow-md">
               <Image
-                src="/images/ezo-team-van.jpg"
+                src="/images/ezo-team-van.webp"
                 alt="EZO Plumbing and Heating van"
                 width={900}
                 height={520}
