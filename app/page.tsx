@@ -86,7 +86,7 @@ export default function HomePage() {
       {/* QUICK TRUST STRIP */}
       <section className="grid gap-4 rounded-2xl border border-[#01487E]/15 bg-[#01487E]/5 p-4 text-sm sm:grid-cols-3">
         <div className="rounded-xl bg-white/70 p-3 transition-transform duration-150 hover:-translate-y-0.5">
-          <p className="text-2xl font-bold text-[#01487E]">60–90 min</p>
+          <p className="text-2xl font-bold text-[#01487E]">30–60 min</p>
           <p className="text-sm text-[#01487E]/90">
             Typical emergency response time in many areas*
           </p>
@@ -111,7 +111,7 @@ export default function HomePage() {
       <SectionDivider label="Services &amp; pricing" />
 
       {/* FEATURED SERVICES – all services, scrollable */}
-      <section className="space-y-4">
+      {/* <section className="space-y-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <div>
             <h2 className="text-[26px] sm:text-3xl font-extrabold text-[#01487E]">
@@ -131,7 +131,7 @@ export default function HomePage() {
         </div>
 
         <ServicesStrip />
-      </section>
+      </section> */}
 
       {/* HOW PRICING WORKS */}
       <section className="space-y-4 rounded-2xl border border-[#01487E]/15 bg-white/90 p-4 md:p-5">
